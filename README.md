@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>오봉댐 물 절약 앱</title>
+    <!-- Tailwind CSS CDN을 사용하여 깃허브에서 바로 렌더링되도록 합니다 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +25,7 @@
             display: flex;
             align-items: flex-end;
             justify-content: center;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.1); /* 내부 그림자 추가 */
         }
         .water {
             width: 100%;
@@ -101,7 +103,6 @@
     <script>
         // 이 변수를 통해 실제 오봉댐의 최신 저수율을 업데이트하세요.
         // 데이터 소스: Google 검색 결과에 기반한 2025년 9월 22일 기준 60.0%
-        // (Note: To get real-time data, you would need to use a public data API, but none were found for this specific dam.)
         const currentWaterLevel = 60.0;
 
         // DOM 요소 가져오기
@@ -122,9 +123,9 @@
         }
 
         // 페이지 로드 시 저수율 업데이트 시작
-        window.onload = () => {
+        document.addEventListener('DOMContentLoaded', () => {
             updateWaterLevel(currentWaterLevel);
-        };
+        });
     </script>
 </body>
 </html>
